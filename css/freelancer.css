@@ -45,7 +45,7 @@ hr.star-primary {
 
 hr.star-light:after,
 hr.star-primary:after {
-    content: "\f005";
+    content: "\f004";
     display: inline-block;
     position: relative;
     top: -.8em;
@@ -194,19 +194,22 @@ section.success {
     }
 }
 
-#winners .portfolio-item {
+.portfolio-item {
     right: 0;
     margin: 0 0 15px;
 }
 
-#winners .portfolio-item .portfolio-link {
+.portfolio-item .portfolio-link {
     display: block;
     position: relative;
     margin: 0 auto;
-    max-width: 400px;
+    /*max-width: 400px;*/
+    height: 260px;
+    /*width: 360px;*/
+    width: 100%;
 }
 
-#winners .portfolio-item .portfolio-link .caption {
+.portfolio-item .portfolio-link .caption {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -217,11 +220,11 @@ section.success {
     transition: all ease .5s;
 }
 
-#winners .portfolio-item .portfolio-link .caption:hover {
+.portfolio-item .portfolio-link .caption:hover {
     opacity: 1;
 }
 
-#winners .portfolio-item .portfolio-link .caption .caption-content {
+.portfolio-item .portfolio-link .caption .caption-content {
     position: absolute;
     top: 50%;
     width: 100%;
@@ -232,12 +235,12 @@ section.success {
     color: #fff;
 }
 
-#winners .portfolio-item .portfolio-link .caption .caption-content i {
+.portfolio-item .portfolio-link .caption .caption-content i {
     margin-top: -12px;
 }
 
-#winners .portfolio-item .portfolio-link .caption .caption-content h3,
-#winners .portfolio-item .portfolio-link .caption .caption-content h4 {
+.portfolio-item .portfolio-link .caption .caption-content h3,
+.portfolio-item .portfolio-link .caption .caption-content h4 {
     margin: 0;
 }
 
@@ -246,7 +249,7 @@ section.success {
 }
 
 @media(min-width:767px) {
-    #winners .portfolio-item {
+    .portfolio-item {
         margin: 0 0 30px;
     }
 }
@@ -396,6 +399,11 @@ footer .footer-below {
     box-shadow: none;
 }
 
+.portfolio-modal .modal-dialog {
+    width: auto;
+    margin: auto; 
+}
+
 .portfolio-modal .modal-content h2 {
     margin: 0;
     font-size: 3em;
@@ -454,6 +462,8 @@ footer .footer-below {
     background-size: contain;
     width: 200px;
     height: 50px;
+    margin-top: 5px;
+    margin-left: 15px;
 }
 
 .navbar-nav>li>a {
@@ -462,4 +472,131 @@ footer .footer-below {
 
 .navbar-default .navbar-nav>li>a:hover {
     color: #ddd;
+}
+
+/* CONTACT */
+
+.contact_content {
+    text-align: center;
+}
+
+.contact_content fieldset {
+    border: 3px solid #eee;
+    border-radius: 4px;
+    /*width: 500px;*/
+    margin: 0 auto;
+    padding: 40px;
+    margin-top: 5px;    
+    position: relative;
+}
+
+#contact .form h1 {
+    position: absolute;
+    top: 200px;
+    font-size: 30px;
+    line-height: 100%;
+    display: block;
+    text-align: center;
+}
+
+
+.contact_content fieldset input[type=text] {
+    background: transparent;
+    border: none;
+    width: 100%;
+    font-size: 28px;
+    padding: 5px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+
+    
+}
+
+.contact_content fieldset textarea {
+    /*background: #ececec url('../img/back/back_textarea.png') top left;*/
+    background:transparent;
+    border: none;
+    width: 100%;
+    font-size: 28px;
+    padding: 5px;
+    border-bottom: 2px solid #eee;
+    line-height: 170%;
+    height: 180px;
+    margin-bottom: 40px;
+    
+}
+
+.contact_content a.btn_contact {
+    border: 2px solid #eee;
+    border-radius: 4px;
+    color: #eee;
+    line-height: 100%;
+    padding: 10px 20px  6px 20px;
+    font-size: 30px;
+    text-decoration: none;
+
+}
+
+::-webkit-input-placeholder {
+   color: #888;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #888;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #888; 
+}
+
+:-ms-input-placeholder {  
+   color: #888;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+.contact_content h2 {
+    display: block;
+/*  margin-bottom: 60px;*/
+}
+
+
+
+.contact_content small {
+    display: block;
+    margin-top: 20px;
+
+    clear: both;
+}
+
+.contact_content small.lang {
+    color: #a8a8a8; 
+}
+
+.contact_content small a {
+    color: #a8a8a8;
+    text-decoration: none;
+}
+
+.contact_content small a.active {
+    color: #767676;
+    text-decoration: none;
+}
+
+.contact_content .socials {
+    display: block;
+    width: 400px;
+    margin: 0px auto;
+}
+
+.contact_content .socials li {
+    float: left;
+    margin: 40px 20px;
+}
+
+
+.navbar-default .navbar-toggle {
+    border-color: #fdb44f;
 }
