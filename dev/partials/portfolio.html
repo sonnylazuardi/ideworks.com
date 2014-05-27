@@ -1,0 +1,11 @@
+<h2>Portfolios</h2>
+
+<div class="row">
+	<div class="col-md-4" ng-repeat="portfolio in portfolios">
+		<div><strong>{{portfolio.name}}</strong></div>
+		<div ng-bind-html="portfolio.description">
+		</div>
+		<a href class="btn btn-success" ng-click="delete(portfolio.id)" data-id="{{portfolio.getName()}}">Delete</a>
+		<br>
+	</div>
+</div>
