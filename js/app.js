@@ -32,8 +32,12 @@ App.directive('imgLiquid', function() {
         restrict: 'A',
         link: function(scope, element, attrs) {
         	element.bind('load', function() {
-            $(element).parent().imgLiquid();
-          });
+            	$(element).parent().imgLiquid({
+            		onFinish: function() {
+            			$(element).parent().hide().fadeIn('slow');
+            		}
+            	});
+          	});
         }
     };
 });
