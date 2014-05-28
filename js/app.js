@@ -1,4 +1,31 @@
-var App = angular.module('ideworks', ['ui.bootstrap', 'firebase']);
+var App = angular.module('ideworks', ['ui.bootstrap', 'firebase', 'ngRoute']);
+
+App.config(['$routeProvider', function ($routeProvider) {
+	$routeProvider
+	.when('/', {
+		template: '&nbsp;',
+		controller: '',
+	})
+	.when('/:pageId', {
+		template: '&nbsp;',
+		controller: '',
+		resolve: {
+			delay: function($q, $timeout, $route, $modal) {
+				var pageId = $route.current.params.pageId;
+				var modalInstance = $modal.open({
+			      templateUrl: 'partials/'+pageId+'.html',
+			      windowClass: 'portfolio-modal',
+			      controller: ModalCtrl
+			    });
+				var delay = $q.defer();
+		        return delay.promise;
+			}
+		}
+	})
+	.otherwise({
+		redirectTo: '/'
+	});
+}]);
 
 App.directive('imgLiquid', function() {
     return {
@@ -34,15 +61,16 @@ var MainCtrl = function ($scope, $modal, $log, $firebase) {
 		'habibie',
 		'james',
 		'genta',
+		'ch',
 	];
 
-  $scope.open = function (path) {
-    var modalInstance = $modal.open({
-      templateUrl: 'partials/'+path+'.html',
-      windowClass: 'portfolio-modal',
-      controller: ModalCtrl
-    });
-  };
+	$scope.open = function (path) {
+		var modalInstance = $modal.open({
+			templateUrl: 'partials/'+path+'.html',
+			windowClass: 'portfolio-modal',
+			controller: ModalCtrl
+		});
+	};
 
 	var ref = new Firebase("https://ideworks.firebaseio.com/contact");
 	$scope.contact = $firebase(ref);
@@ -62,12 +90,14 @@ var MainCtrl = function ($scope, $modal, $log, $firebase) {
 
 };
 
-var ModalCtrl = function ($scope, $modalInstance) {
+var ModalCtrl = function ($scope, $modalInstance, $location) {
   $scope.ok = function () {
     $modalInstance.close();
+    $location.path('/');
   };
 
   $scope.cancel = function () {
     $modalInstance.dismiss('cancel');
+    $location.path('/');
   };
 };

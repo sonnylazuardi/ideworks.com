@@ -113,7 +113,7 @@
                 <div class="col-lg-10 col-lg-offset-1">
                     <div class="row">
                         <div class="col-sm-4 portfolio-item" data-anijs="if: scroll, on: window, do: bounceInLeft animated, before: scrollReveal" ng-repeat="item in works track by $index">
-                            <a href="#" class="portfolio-link" data-toggle="modal" ng-click="open(item)">
+                            <a href="#{{item}}" class="portfolio-link" data-toggle="modal">
                                 <div class="caption">
                                     <div class="caption-content">
                                         <i class="fa fa-search-plus fa-3x"></i>
@@ -147,7 +147,7 @@
                 <div class="col-lg-10 col-lg-offset-1">
                     <div class="row">
                         <div class="col-sm-4 portfolio-item" data-anijs="if: scroll, on: window, do: rubberBand animated, before: scrollReveal" ng-repeat="item in awards track by $index">
-                            <a href="#" class="portfolio-link" data-toggle="modal" ng-click="open(item)">
+                            <a href="#{{item}}" class="portfolio-link" data-toggle="modal">
                                 <div class="caption">
                                     <div class="caption-content">
                                         <i class="fa fa-search-plus fa-3x"></i>
@@ -181,7 +181,7 @@
                 <div class="col-lg-10 col-lg-offset-1">
                     <div class="row">
                         <div class="col-sm-4 portfolio-item" data-anijs="if: scroll, on: window, do: rubberBand animated, before: scrollReveal" ng-repeat="item in team track by $index">
-                            <a href="#" class="portfolio-link" data-toggle="modal" ng-click="open(item)">
+                            <a href="#{{item}}" class="portfolio-link" data-toggle="modal">
                                 <div class="caption">
                                     <div class="caption-content">
                                         <i class="fa fa-search-plus fa-3x"></i>
@@ -222,6 +222,9 @@
                 </div>
             </div>
         </div>
+    
+        <div ng-view style="display:none"></div>
+
         <div class="footer-below">
             <div class="container">
                 <div class="row">
@@ -249,6 +252,7 @@
     <script src="//cdn.rawgit.com/karacas/imgLiquid/master/js/imgLiquid-min.js"></script>
     <script src="//cdn.firebase.com/js/client/1.0.15/firebase.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.min.js"></script>
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
     <script src="//cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
     <script src="js/classie.js"></script>
