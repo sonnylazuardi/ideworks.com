@@ -44,28 +44,30 @@ App.directive('imgLiquid', function() {
 
 var MainCtrl = function ($scope, $modal, $log, $firebase) {
 	$scope.works = [
-		'camel',
-		'camel',
-		'camel',
-		'camel',
+		{item:'gopublic', link:'http://sonnylab.com/gopublic.web.id'},
+		{item:'arbun', link:'http://archive.habibiefaried.com/arbun/index.php'},
+		{item:'camel', link:'#camel'},
+		{item:'broomlight', link:'http://sonnylab.com/anchor/blog/posts/broomlight'},
+		{item:'kecap', link:'#kecap'},
+		{item:'smoothie', link:'http://sonnylab.com/anchor/blog/posts/smoothie'},
 	];
 	
 	$scope.awards = [
-		'camel',
-		'camel',
-		'camel',
-		'camel',
+		{item:'thinkquest', link:'#thinkquest'},
+		{item:'inaicta', link:'http://www.inaicta.web.id/inaicta/pemenang-inaicta-2013/'},
+		{item:'compfest', link:'http://teknojurnal.com/malam-puncak-compfest-2013-lahirkan-banyak-jawara-pengembang-aplikasi/'},
+		{item:'imaginecup', link:'http://blogs.msdn.com/b/indonesia/archive/2014/04/12/daftar-pemenang-imagine-cup-2014-indonesia.aspx'},
 	];
 
 	$scope.team = [
-		'kave',
-		'alif',
-		'evan',
-		'sonny',
-		'habibie',
-		'james',
-		'genta',
-		'ch',
+		{item:'kave', link:'#kave'},
+		{item:'alif', link:'#alif'},
+		{item:'evan', link:'#evan'},
+		{item:'sonny', link:'#sonny'},
+		{item:'habibie', link:'#habibie'},
+		{item:'james', link:'#james'},
+		{item:'genta', link:'#genta'},
+		{item:'ch', link:'#ch'},
 	];
 
 	$scope.open = function (path) {

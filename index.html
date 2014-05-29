@@ -85,9 +85,9 @@
                 <div class="col-lg-12">
                     <img class="img-responsive" src="img/room.png" alt="" data-anijs="if: scroll, on: window, do: rollIn animated, before: scrollReveal; if: load, on: window, do: rubberBand animated; if: mouseover, do: rubberBand animated">
                     <div class="intro-text">
-                        <span class="name" data-anijs="if: animationend, on:.img-responsive, do: bounce animated, after: removeAnim"><strong>small</strong> team. <strong>big</strong> impact</span>
+                        <span class="name" data-anijs="if: animationend, on:.img-responsive, do: bounce animated, after: removeAnim"><strong>big</strong> team. <strong>big</strong> impact</span>
                         <hr class="star-light" data-anijs="if: animationend, on:span.name, do: rotateIn animated, after: removeAnim">
-                        <span class="skills">We are creative developers come from Bandung with love</span><br>
+                        <span class="skills">We are <strong>passionate</strong> developers from Bandung with <strong>love</strong></span><br>
                     </div>
                 </div>
             </div>
@@ -112,14 +112,14 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
                     <div class="row">
-                        <div class="col-sm-4 portfolio-item" data-anijs="if: scroll, on: window, do: bounceInLeft animated, before: scrollReveal" ng-repeat="item in works track by $index">
-                            <a href="#{{item}}" class="portfolio-link" data-toggle="modal">
+                        <div class="col-sm-4 portfolio-item" data-anijs="if: scroll, on: window, do: bounceInLeft animated, before: scrollReveal" ng-repeat="item in works.slice().reverse() track by $index">
+                            <a href="{{item.link}}" class="portfolio-link" data-toggle="modal">
                                 <div class="caption">
                                     <div class="caption-content">
                                         <i class="fa fa-search-plus fa-3x"></i>
                                     </div>
                                 </div>
-                                <img ng-src="img/portfolio/{{item}}.jpg" class="img-responsive" alt="" img-liquid/>
+                                <img ng-src="img/portfolio/{{item.item}}.jpg" class="img-responsive" alt="" img-liquid/>
                             </a>
                         </div>
                     </div>  
@@ -146,14 +146,14 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
                     <div class="row">
-                        <div class="col-sm-4 portfolio-item" data-anijs="if: scroll, on: window, do: rubberBand animated, before: scrollReveal" ng-repeat="item in awards track by $index">
-                            <a href="#{{item}}" class="portfolio-link" data-toggle="modal">
+                        <div class="col-sm-4 portfolio-item" data-anijs="if: scroll, on: window, do: rubberBand animated, before: scrollReveal" ng-repeat="item in awards.slice().reverse() track by $index">
+                            <a href="{{item.link}}" class="portfolio-link" data-toggle="modal">
                                 <div class="caption">
                                     <div class="caption-content">
                                         <i class="fa fa-search-plus fa-3x"></i>
                                     </div>
                                 </div>
-                                <img ng-src="img/portfolio/{{item}}.jpg" class="img-responsive" alt="" img-liquid/>
+                                <img ng-src="img/portfolio/{{item.item}}.jpg" class="img-responsive" alt="" img-liquid/>
                             </a>
                         </div>
                     </div>  
@@ -181,13 +181,13 @@
                 <div class="col-lg-10 col-lg-offset-1">
                     <div class="row">
                         <div class="col-sm-4 portfolio-item" data-anijs="if: scroll, on: window, do: rubberBand animated, before: scrollReveal" ng-repeat="item in team track by $index">
-                            <a href="#{{item}}" class="portfolio-link" data-toggle="modal">
+                            <a href="{{item.link}}" class="portfolio-link" data-toggle="modal">
                                 <div class="caption">
                                     <div class="caption-content">
                                         <i class="fa fa-search-plus fa-3x"></i>
                                     </div>
                                 </div>
-                                <img ng-src="img/portfolio/{{item}}.jpg" class="img-responsive" alt="" img-liquid/>
+                                <img ng-src="img/portfolio/{{item.item}}.jpg" class="img-responsive" alt="" img-liquid/>
                             </a>
                         </div>
                     </div>  
